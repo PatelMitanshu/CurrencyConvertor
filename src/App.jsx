@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import  InputBox from './components/inputBox'
 import useCurrencyInfo from './hooks/useCurrencyinfo'
-
+import baground from './baground_1.avif'
 function App() {
 
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState()
   const [from, setFrom] = useState("usd")
   const [to, setTo] = useState("inr")
   const [convertedAmount, setConvertedAmount] = useState(0)
-
   const currencyInfo = useCurrencyInfo(from)
   const options = Object.keys(currencyInfo)
 
@@ -28,7 +27,7 @@ function App() {
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
          
-            backgroundImage: `url('https://img.freepik.com/free-photo/heap-chocolate-coins_23-2147748111.jpg?t=st=1719840452~exp=1719841052~hmac=ed796b4f314b0d63015fc52bb054a7f9c8bcc4afef1ea65f4a44af4fd4905f79')`,
+            backgroundImage: `url(${baground})`,
         }}
     >
         <div className="w-full">
